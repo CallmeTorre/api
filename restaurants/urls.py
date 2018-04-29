@@ -1,10 +1,10 @@
 from django.conf.urls import include
 from django.urls import path
 from rest_framework import routers
-from .utils import RestaurantViewSet
+from .views import RestaurantViewSet
 
 router = routers.DefaultRouter()
-router.register(r'restaurants', RestaurantViewSet)
+router.register(r'', RestaurantViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
