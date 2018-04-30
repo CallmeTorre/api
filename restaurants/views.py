@@ -3,6 +3,9 @@ from .utils import RestaurantSerializer
 from .models import Restaurant
 
 class StatisticView(views.APIView):
+    """
+    Return a list of specifics restaurants. 
+    """
     def get_object(self, pk):
         try:
             restaurants = Restaurant.objects.get(pk=pk)
@@ -18,6 +21,16 @@ class StatisticView(views.APIView):
         return response.Response(serializer.data)
 
 class RestaurantViewSet(viewsets.ModelViewSet):
+    """
+    retrieve:
+    Return a specific restaurant. 
+
+    list:
+    Return all the restaurants in the API.
+    
+    create:
+    Create a new restaurant instance.
+    """
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
