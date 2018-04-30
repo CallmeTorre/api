@@ -129,7 +129,7 @@ STATIC_URL = '/static/'
 # Api Configuration
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES' : [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+        'rest_framework.permissions.IsAuthenticated',
     ]
 }
 
@@ -144,4 +144,5 @@ CORS_ALLOW_METHODS = (
     'PUT',
 )
 
+# Heroku Configuration
 django_heroku.settings(locals())
