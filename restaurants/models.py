@@ -1,6 +1,6 @@
 from django.db import models
 
-class restaurant(models.Model):
+class Restaurant(models.Model):
     id = models.CharField(primary_key = True, editable = True, max_length = 255, verbose_name = u'Id')
     rating = models.IntegerField(verbose_name = u'Rating')
     name = models.CharField(max_length = 255, verbose_name = u'Nombre')

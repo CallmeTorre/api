@@ -1,7 +1,7 @@
-from rest_framework import serializers, viewsets
-from .models import restaurant
+from rest_framework import serializers
+from .models import Restaurant
 
-class RestaurantSerializer(serializers.HyperlinkedModelSerializer):
+class RestaurantSerializer(serializers.ModelSerializer):
     class Meta:
-        model = restaurant
+        model = Restaurant
         fields = ('url', 'id', 'rating', 'name', 'site', 'email', 'phone', 'street', 'city', 'state', 'lat', 'long')
